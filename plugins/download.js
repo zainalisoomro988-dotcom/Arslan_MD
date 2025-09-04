@@ -220,7 +220,7 @@ cmd({
 ┃ 📅 *Updated On:* ${app.updated}
 ┃ 👨‍💻 *Developer:* ${app.developer.name}
 ╰━━━━━━━━━━━━━━━┈⊷
-🔗 *Powered By DARKZONE-AI*`;
+🔗 *Powered By Arslan-MD*`;
 
     await conn.sendMessage(from, { react: { text: "⬆️", key: m.key } });
 
