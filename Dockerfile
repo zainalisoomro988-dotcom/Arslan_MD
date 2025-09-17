@@ -7,7 +7,7 @@ RUN git clone https://github.com/Arslan-MD/Arslan_MD.git /root/arslan-bot
 WORKDIR /root/arslan-bot
 
 # Install dependencies
-RUN npm install && npm install -g pm2
+RUN npm install && npm install -g pm2 || yarn install --network-concurrency 1
 
 # Expose port
 EXPOSE 9090
