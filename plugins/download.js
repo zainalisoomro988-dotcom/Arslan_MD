@@ -7,8 +7,8 @@ const axios = require("axios");
 const { cmd, commands } = require('../command');
 
 cmd({
-  pattern: "ig",
-  alias: ["insta", "Instagram"],
+  pattern: "ig7",
+  alias: ["insta8", "Instagram9"],
   desc: "To download Instagram videos.",
   react: "🎥",
   category: "download",
