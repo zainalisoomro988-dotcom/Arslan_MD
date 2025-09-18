@@ -23,7 +23,7 @@ cmd({
       react: { text: "⏳", key: m.key }
     });
 
-    const response = await axios.get(`https://jawad-tech.vercel.app/downloader?url=${q}`);
+    const response = await axios.get(`https://insta-down.apis-bj-devs.workers.dev/?url=${q}`);
     const data = response.data;
 
     if (!data || data.status !== 200 || !data.downloadUrl) {
