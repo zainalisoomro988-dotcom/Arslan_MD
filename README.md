@@ -1,6 +1,6 @@
 🤖 ***Arslan-MD*** - MULTIPLE POWERFUL WHATSAPP BOT
 
-> ⚔️ Developed by ArslanMD Official | 100+ Features | Super Aggressive Bot
+> ⚔️ Developed by ArslanMD Official | 500+ Features | Super Aggressive Bot
 </div>
 
 <p align="center">
@@ -54,7 +54,7 @@ Authenticate using **one** of the methods below to generate your `Session ID`.
 
 > 🇵🇰 Pairing Code Server-2
 
-[![Pairing Code](https://img.shields.io/badge/Pairing%20Code-000000?style=for-the-badge&logo=react&logoColor=red)](https://arslan-xmd-pair-site.onrender.com/)
+[![Pairing Code](https://img.shields.io/badge/Pairing%20Code-000000?style=for-the-badge&logo=react&logoColor=blue)](https://arslan-xmd-pair-site.onrender.com/)
 
 <p align="center">
   <img src="https://i.imgur.com/LyHic3i.gif" width="65%" />
