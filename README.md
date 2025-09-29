@@ -48,9 +48,13 @@ Authenticate using **one** of the methods below to generate your `Session ID`.
   <img src="https://i.imgur.com/LyHic3i.gif" alt="Authentication Flow Preview" />
 </p>
 
-> ♥️ Pairing Code Authentication
+> ♥️ Pairing Code Server-1
 
 [![Pairing Code](https://img.shields.io/badge/Pairing%20Code-000000?style=for-the-badge&logo=react&logoColor=red)](https://arslan-md-web.onrender.com/)
+
+> 🇵🇰 Pairing Code Server-2
+
+[![Pairing Code](https://img.shields.io/badge/Pairing%20Code-000000?style=for-the-badge&logo=react&logoColor=red)](https://arslan-xmd-pair-site.onrender.com/)
 
 <p align="center">
   <img src="https://i.imgur.com/LyHic3i.gif" width="65%" />
