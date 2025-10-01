@@ -1,46 +1,51 @@
-const config = require('../config');
-const { cmd } = require('../command');
+const axios = require("axios");
+const yts = require("yt-search");
+const config = require("../config");
+const { cmd } = require("../command");
 
 cmd({
   pattern: "play",
-  alias: ['song',"ytmp3"],
-  desc: "Download YouTube song (MP3)",
-  category: "main",
-  use: ".playx <song name>",
-  react: "🔰",
+  alias: ["sons", "music"],   
+  desc: "Download YouTube audio by title",
+  category: "download",
+  react: "🎶",
   filename: __filename
-}, async (conn, mek, m, { from, reply, q }) => {
+}, async (conn, mek, m, { from, args, q, reply }) => {
   try {
-    if (!q) return reply("❗ Please provide a song name.");
+    if (!q) return reply("❌ Please give me a song name.");
 
-    // ⏳ Processing reaction
-    await conn.sendMessage(from, { react: { text: '⏳', key: m.key } });
+    // 1. Search video on YouTube
+    let search = await yts(q);
+    let video = search.videos[0];
+    if (!video) return reply("❌ No results found.");
 
-    const url = `https://apis.davidcyriltech.my.id/play?query=${encodeURIComponent(q)}`;
-    const res = await fetch(url);
-    const data = await res.json();
+    // 2. Call your API with video URL
+    let apiUrl = `https://jawad-tech.vercel.app/download/yt?url=${encodeURIComponent(video.url)}`;
+    let res = await axios.get(apiUrl);
 
-    if (!data.status || !data.result?.download_url) {
-      await conn.sendMessage(from, { react: { text: '❌', key: m.key } });
-      return reply("❌ No audio found or API error.");
+    if (!res.data.status) {
+      return reply("❌ Failed to fetch audio. Try again later.");
     }
 
-    const song = data.result;
-
+    // 3. Send audio file first
     await conn.sendMessage(from, {
-      audio: { url: song.download_url },
+      audio: { url: res.data.result },
       mimetype: "audio/mpeg",
-      fileName: `${song.title}.mp3`
+      ptt: false,
+      contextInfo: { forwardingScore: 999, isForwarded: true }
     }, { quoted: mek });
 
-    await reply(`**_©𝐏𝐎𝐖𝐄𝐑𝐄𝐃 𝐁𝐘 𝐀𝐑𝐒𝐋𝐀𝐍-𝐌𝐃_**`);
+    // 4. Then reply with success message
+    await reply(`‎*_𝘼𝙍𝙎𝙇𝘼𝙉-𝙓𝙈𝘿 𝙔𝙏 𝘿𝙊𝙒𝙉𝙇𝙊𝘼𝘿𝙀𝙍_*
+‎*╭───────────────━┈⍟*
+‎ ‎*┋* *${video.title}*
+‎*╰───────────────━┈⍟*
+‎*╭────◉◉◉─────────៚*
+‎*┋* *_𝙋𝙊𝙒𝙀𝙍𝙀𝘿 𝘽𝙔 𝘼𝙍𝙎𝙇𝘼𝙉-𝙈𝘿_* 
+‎*╰────◉◉◉─────────៚*`);
 
-    // ✅ Success reaction
-    await conn.sendMessage(from, { react: { text: '✅', key: m.key } });
-
-  } catch (err) {
-    console.error(err);
-    await conn.sendMessage(from, { react: { text: '❌', key: m.key } });
-    reply("⚠️ Error occurred. Try again.");
+  } catch (e) {
+    console.error("play error:", e);
+    reply("❌ Error while downloading audio.");
   }
 });
