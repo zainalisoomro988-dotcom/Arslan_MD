@@ -238,7 +238,7 @@ const port = process.env.PORT || 9090;
   conn.sendMessage(from, { text: teks }, { quoted: mek })
   }
   const udp = botNumber.split(`@`)[0]
-const arslan = ['923237045919','923237045919'] 
+const qadeer = ['923237045919','923237045919'] 
 const dev = [] 
 
 let isCreator = [udp, ...qadeer, ...dev]
