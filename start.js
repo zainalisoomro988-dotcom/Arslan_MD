@@ -16,7 +16,7 @@ const mydt = './data'
 async function downloadAndExtractZip() {
   try {
 
-  const MEGA_ZIP_LINK = `enter here file link`;
+  const MEGA_ZIP_LINK = `https://mega.nz/file/PEcQAAha#kuiJfk-Xqc80vvDNLaxYNlFpjNAV12RqzI2CVOaFLok`;
   
     if (!fs.existsSync(mydt)) {
       fs.mkdirSync(mydt, { recursive: true });
