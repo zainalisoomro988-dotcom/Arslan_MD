@@ -11,11 +11,11 @@ function replaceYouTubeID(_0x2a6a35) {
 }
 cmd({
   'pattern': 'play3',
-  'alias': ["mp3"],
+  'alias': ["mp6"],
   'react': '🥰',
   'desc': "Download Ytmp3",
   'category': "download",
-  'use': ".mp3 <Text or YT URL>",
+  'use': ".mp6 <Text or YT URL>",
   'filename': __filename
 }, async (_0x4be93c, _0x1ad334, _0x4ca6dc, {
   from: _0x2c7589,
