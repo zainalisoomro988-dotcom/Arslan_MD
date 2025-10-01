@@ -238,10 +238,10 @@ const port = process.env.PORT || 9090;
   conn.sendMessage(from, { text: teks }, { quoted: mek })
   }
   const udp = botNumber.split(`@`)[0]
-const qadeer = ['923237045919','923237045919'] 
+const arslan = ['923237045919','923237045919'] 
 const dev = [] 
 
-let isCreator = [udp, ...qadeer, ...dev]
+let isCreator = [udp, ...arslan, ...dev]
     .map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net')
     .includes(sender);
 
