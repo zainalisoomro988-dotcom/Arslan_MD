@@ -149,7 +149,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [20.x]
+        node-version: [20.x]   # Specific Node.js version set to 20.x
 
     steps:
     - name: Checkout repository
@@ -159,9 +159,13 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
+        check-latest: true   # Always grab the exact latest patch for this version
 
     - name: Install dependencies
       run: npm install
+
+    - name: Build project (optional)
+      run: npm run build || echo "No build script found, skipping..."
 
     - name: Start application
       run: npm start
